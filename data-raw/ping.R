@@ -4,6 +4,7 @@ start_time = today() + hours(14)
 library(dplyr)
 ping = tibble(
   time = start_time + (1:length(temp) |> lubridate::seconds()),
+  # note: man ping says default is 1 second between pings; couldn't find a way to timestamp send times, only receive times.
   ping = if_else(
     grepl(fixed = TRUE, pattern = "Request timeout",x = temp),
     Inf,
