@@ -1,3 +1,4 @@
+# get data from "ping ucdavis.edu" or similar
 temp = readLines("inst/extdata/ping_data.txt")
 library(lubridate)
 start_time = today() + hours(14)
