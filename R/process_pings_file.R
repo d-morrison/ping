@@ -1,15 +1,23 @@
-process_pings_file = function(file)
+process_pings_file = function(file, start_time = NULL)
 {
   all_data = file |> readLines()
   temp = all_data[-(1:3)]
-  start_time =
-    all_data[1] |>
-    sub(
-      # pattern = "([[:digit:]]{2}\\:[[:digit:]]{2}\\:[[:digit:]]{2}).*",
-      pattern = "^Last login\\: (.*) on .*$",
-      replacement = "\\1") |> print()
-  library(lubridate)
-  start_time = today() + hours(14)
+  if(is.null(start_time))
+  {
+
+    start_time =
+      all_data[1] |>
+      sub(
+        # pattern = "([[:digit:]]{2}\\:[[:digit:]]{2}\\:[[:digit:]]{2}).*",
+        pattern = "^Last login\\: [[:alpha:]]+ (.*) on .*$",
+        replacement = "\\1") |> strsplit(" ") |> unlist() |> print()
+
+    # month = start_time[1] |>
+    # day = start_time[2]
+    library(lubridate)
+    start_time = today() + hours(14)
+  }
+
   library(dplyr)
   ping = tibble(
     time = start_time + (1:length(temp) |> lubridate::seconds()),

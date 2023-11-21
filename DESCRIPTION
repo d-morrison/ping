@@ -19,3 +19,7 @@ Imports:
     lubridate,
     plotly,
     usethis
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
