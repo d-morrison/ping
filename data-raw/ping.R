@@ -25,3 +25,12 @@ ping = process_pings_file(
 )
 
 ping |> graph_pings()
+
+
+ping = process_pings_file(
+  file = "inst/extdata/after-restart-2023-11-21.txt",
+  start_time = lubridate::as_datetime("2023-11-21 14:16:02")
+)
+
+ping |> graph_pings()
+
