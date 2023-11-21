@@ -1,3 +1,6 @@
+
+
+
 64 bytes from 142.250.189.238: icmp_seq=0 ttl=55 time=102.726 ms
 64 bytes from 142.250.189.238: icmp_seq=1 ttl=55 time=15.207 ms
 64 bytes from 142.250.189.238: icmp_seq=2 ttl=55 time=16.235 ms
