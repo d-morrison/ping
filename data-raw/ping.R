@@ -1,5 +1,5 @@
 load_all()
-
+library(plotly)
 # get data from "ping ucdavis.edu" or similar
 
 # ping = process_pings_file("inst/extdata/ping_data.txt")
@@ -32,5 +32,5 @@ ping = process_pings_file(
   start_time = lubridate::as_datetime("2023-11-21 14:16:02")
 )
 
-ping |> graph_pings()
+ping |> graph_pings() |> plotly::ggplotly()
 
