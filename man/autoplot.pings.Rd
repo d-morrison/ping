@@ -4,12 +4,14 @@
 \alias{autoplot.pings}
 \title{`autoplot()` method for `"pings"` objects}
 \usage{
-\method{autoplot}{pings}(object, ...)
+\method{autoplot}{pings}(object, log_y = FALSE, ...)
 }
 \arguments{
 \item{object}{a `"pings"` object created using [process_pings_file()]}
 
-\item{filepath}{[character()] path to a .txt file containing ping data}
+\item{log_y}{whether to display the y axis with logarithmic spacing}
+
+\item{...}{unused}
 }
 \value{
 a [ggplot2::ggplot()]

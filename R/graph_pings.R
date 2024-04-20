@@ -1,7 +1,9 @@
 #' `autoplot()` method for `"pings"` objects
 #'
+#' @param log_y whether to display the y axis with logarithmic spacing
+#' @param ... unused
 #' @param object a `"pings"` object created using [process_pings_file()]
-#' @param filepath [character()] path to a .txt file containing ping data
+#'
 #' @returns a [ggplot2::ggplot()]
 #' @export
 #'
@@ -16,17 +18,25 @@ autoplot.pings = function(
     log_y = FALSE,
     ...)
 {
-  plot1 = ping |>
+  plot1 = object |>
     ggplot2::ggplot(ggplot2::aes(x = time, y = ping)) +
     # scale_y_continuous(trans = scales::reciprocal_trans()) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
-    ggplot2::xlab('time ping sent (approx)')
+    ggplot2::ylab("ping (ms)")
+    ggplot2::xlab('time ping sent (approx)') +
+    ggplot2::theme_bw()
 
   if(log_y)
+  {
     plot1 = plot1 +
-      ggplot2::scale_y_log10()
+      ggplot2::scale_y_log10(labels = scales::comma)
 
+  } else
+  {
+    plot1 = plot1 +
+      ggplot2::scale_y_continuous(labels = scales::comma)
+  }
   return(plot1)
 
 }
