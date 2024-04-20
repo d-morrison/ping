@@ -27,9 +27,12 @@ package:
 
 ``` r
 library(ping)
-fs::path_package(
+path_to_file = 
+  fs::path_package(
   package = "ping",
-  "extdata/data_2023-11-20.txt") |>
+  "extdata/data_2023-11-20.txt")
+
+path_to_file |>
   process_pings_file() |>
   autoplot()
 #> Extracted start time from first row of input file: 13H 34M 35S

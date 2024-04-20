@@ -36,9 +36,12 @@ Here is an example, reading data from a .txt file included in the package:
 
 ```{r example}
 library(ping)
-fs::path_package(
+path_to_file = 
+  fs::path_package(
   package = "ping",
-  "extdata/data_2023-11-20.txt") |>
+  "extdata/data_2023-11-20.txt")
+
+path_to_file |>
   process_pings_file() |>
   autoplot()
 ```
