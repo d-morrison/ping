@@ -24,7 +24,7 @@ autoplot.pings = function(
     ggplot2::geom_point() +
     ggplot2::geom_line() +
     ggplot2::ylab("ping (ms)")
-    ggplot2::xlab('time ping sent (approx)') +
+  ggplot2::xlab('time ping sent (approx)') +
     ggplot2::theme_bw()
 
   if(log_y)
@@ -40,3 +40,7 @@ autoplot.pings = function(
   return(plot1)
 
 }
+
+#' @export
+#' @importFrom ggplot2 autoplot
+ggplot2::autoplot
