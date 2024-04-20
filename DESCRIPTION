@@ -25,6 +25,7 @@ Imports:
     ggplot2,
     lubridate,
     rlang,
+    scales,
     tibble
 Suggests: 
     knitr,
