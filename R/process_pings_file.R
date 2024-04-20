@@ -25,13 +25,21 @@ process_pings_file = function(file, start_time = NULL)
         # pattern = "([[:digit:]]{2}\\:[[:digit:]]{2}\\:[[:digit:]]{2}).*",
         pattern = "^Last login\\: [[:alpha:]]+ (.*) on .*$",
         replacement = "\\1") |> strsplit(" ") |> unlist()
+    start_time =
+      lubridate::hms(start_time[3])
 
-    start_time = lubridate::hms(start_time[3])
+    cli::cli_inform("Extracted start time from first row of input file: {start_time}")
+
+    start_time = start_time +
+      lubridate::today() |>
+      lubridate::force_tz(Sys.timezone())
+
+
 
     # month = start_time[1] |>
     # day = start_time[2]
 
-    start_time = lubridate::today() + start_time
+
   }
 
   ping = tibble::tibble(
@@ -52,4 +60,13 @@ process_pings_file = function(file, start_time = NULL)
     `1/ping (ms)` = 1/ping,
     gap = c(FALSE, ping[-length(ping)] |> is.infinite())
   )
+
+  ping =
+    structure(ping,
+              class = union(
+                "pings",
+                class(ping)
+              ))
+
+  return(ping)
 }

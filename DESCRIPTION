@@ -14,6 +14,7 @@ Depends:
 URL: https://github.com/d-morrison/ping
 BugReports: https://github.com/d-morrison/ping/issues
 Imports: 
+    cli,
     dplyr,
     fs,
     ggplot2,
