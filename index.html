@@ -77,9 +77,12 @@
 <p>Here is an example, reading data from a .txt file included in the package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/d-morrison/ping" class="external-link">ping</a></span><span class="op">)</span></span>
-<span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path_package.html" class="external-link">path_package</a></span><span class="op">(</span></span>
+<span><span class="va">path_to_file</span> <span class="op">=</span> </span>
+<span>  <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path_package.html" class="external-link">path_package</a></span><span class="op">(</span></span>
 <span>  package <span class="op">=</span> <span class="st">"ping"</span>,</span>
-<span>  <span class="st">"extdata/data_2023-11-20.txt"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="st">"extdata/data_2023-11-20.txt"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">path_to_file</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="reference/process_pings_file.html">process_pings_file</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Extracted start time from first row of input file: 13H 34M 35S</span></span></code></pre></div>
