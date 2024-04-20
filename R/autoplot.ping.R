@@ -23,8 +23,8 @@ autoplot.pings = function(
     # scale_y_continuous(trans = scales::reciprocal_trans()) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
-    ggplot2::ylab("ping (ms)")
-  ggplot2::xlab('time ping sent (approx)') +
+    ggplot2::ylab("ping (ms)") +
+    ggplot2::xlab('time ping sent (approx)') +
     ggplot2::theme_bw()
 
   if(log_y)

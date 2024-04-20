@@ -16,7 +16,7 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
-URL: https://github.com/d-morrison/ping
+URL: https://github.com/d-morrison/ping, https://d-morrison.github.io/ping/
 BugReports: https://github.com/d-morrison/ping/issues
 Imports: 
     cli,
