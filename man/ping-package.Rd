@@ -4,9 +4,9 @@
 \name{ping-package}
 \alias{ping}
 \alias{ping-package}
-\title{ping: What the Package Does (Title Case)}
+\title{ping: Graph ping data}
 \description{
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+Graphs data collected from the `ping` command.
 }
 \seealso{
 Useful links:

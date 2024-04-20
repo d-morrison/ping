@@ -12,14 +12,14 @@
 #'   package = "ping",
 #'   "extdata/data_2023-11-20.txt") |>
 #' process_pings_file() |>
-#' autoplot(data1)
+#' autoplot()
 autoplot.pings = function(
     object,
     log_y = FALSE,
     ...)
 {
   plot1 = object |>
-    ggplot2::ggplot(ggplot2::aes(x = time, y = ping)) +
+    ggplot2::ggplot(ggplot2::aes(x = .data$time, y = .data$ping)) +
     # scale_y_continuous(trans = scales::reciprocal_trans()) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
