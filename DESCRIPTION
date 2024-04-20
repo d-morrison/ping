@@ -15,11 +15,14 @@ URL: https://github.com/d-morrison/ping
 BugReports: https://github.com/d-morrison/ping/issues
 Imports: 
     dplyr,
+    fs,
     ggplot2,
     lubridate,
     plotly,
+    tibble,
     usethis
 Suggests: 
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 7.3.1.9000
